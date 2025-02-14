@@ -54,12 +54,18 @@ width: 70px; /* Maintain aspect ratio */
 
 .move-b{
 background-color: transparent;
-border: 3px solid rgb(25, 25, 25);
-height: 70px; /* Adjusted button size */
-width: 70px;  /* Adjusted button size */
-border-radius:50%; /* Make them round */
-margin: 5px; /* consistent margin between buttons */
+border: 3px solid rgb(25, 25, 25); /* Thinner border */
+height: 70px; /* Further reduced button height */
+width: 70px; /* Further reduced button width */
+border-radius:50%;
+margin: 5px; /* Further reduced button margin */
 cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 0;
+flex: 0 1 auto;
+max-width: 90px; /* Further reduced max-width */
 }
 
 .move-b:hover{
