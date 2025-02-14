@@ -4,206 +4,224 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>games</title>
-    <style>
-        #m-body {
-            background-image: url('s.jpg');
-            background-size: cover;
-            color: rgb(25, 25, 25);
-            font-family: arial;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .doom {
-            border: none;
-            max-width: 90%; /* Responsive width */
-            width: 450px; /* Default width */
-            border-radius: 25px;
-            background-color: white;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-            padding: 20px; /* Adjusted padding */
-            box-sizing: border-box;
-            text-align: center;
-            margin-top: 20px; /* Adjusted margin */
-        }
-
-        .title {
-            font-size: 2em; /* Responsive font size */
-            font-weight: bold;
-            padding: 0; /* Removed padding */
-            background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 20px;
-        }
-
-        .move-icon {
-            max-height: 70px;
-            width: auto;
-        }
-
-        .move-b {
-            background-color: transparent;
-            border: 4px solid rgb(25, 25, 25);
-            height: 100px; /* Adjusted size */
-            width: 100px; /* Adjusted size */
-            border-radius: 50%;
-            margin: 10px;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .move-r {
-            font-size: 1.2em; /* Responsive font size */
-            font-weight: bold;
-            margin-top: 20px;
-            padding: 0; /* Removed padding */
-            background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .score {
-            margin-top: 20px;
-            font-weight: bold;
-            padding: 0; /* Removed padding */
-            background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-            -webkit-background-clip: text;
-            color: transparent;
-        }
-
-        .reset {
-            background-color: green;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 1em; /* Responsive font size */
-            border: none;
-            padding: 8px 15px;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-
-        .move-c {
-            max-height: 80px;
-            width: auto;
-        }
-
-        .ruuu {
-            font-weight: bold;
-            padding: 0; /* Removed padding */
-            background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-top: 20px;
-        }
-    </style>
+<style>
+#m-body{
+background-image:url('s.jpg');
+background-size: cover;
+color: rgb(25, 25, 25);
+font-family: arial;
+}
+.doom{
+border: none;
+height: 550px;
+width: 450px;
+margin-left:30% ;
+margin-right: 30%;
+border-radius: 25px;
+align-content: start;
+padding-left:60px ;
+margin-top: 100px;
+background-color:white;
+box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+padding-top: 50px;
+}
+.title{
+font-size: 30px;
+font-weight: bold;
+padding-left: 50px;
+background: linear-gradient(to left,
+violet,
+indigo,
+blue,
+green,
+yellow,
+orange,
+red);
+-webkit-background-clip: text;
+color: transparent;
+}
+.move-icon{
+height: 70px;
+}
+.move-b{
+background-color: transparent;
+border: 4px solid rgb(25, 25, 25);
+height: 120px;
+width: 120px;
+border-radius:60px ;
+margin-right: 10px;
+cursor: pointer;
+}
+.move-r{
+font-size: 25px;
+font-weight: bold;
+margin-top: 40px;
+padding-left: 160px;
+background: linear-gradient(to left,
+violet,
+indigo,
+blue,
+green,
+yellow,
+orange,
+red);
+-webkit-background-clip: text;
+color: transparent;
+}
+.score{
+margin-top: 60px;
+font-weight: bold;
+padding-left: 130px;
+background: linear-gradient(to left,
+violet,
+indigo,
+blue,
+green,
+yellow,
+orange,
+red);
+-webkit-background-clip: text;
+color: transparent;
+}
+.reset{
+background-color: green;
+color: white;
+font-weight: bold;
+cursor: pointer;
+font-size: 15px;
+border: none;
+padding: 8px 15px;
+margin-left: 165px;
+border-radius: 5px;
+}
+.move-c{
+height:80px;
+}
+.ruuu{
+font-weight: bold;
+padding-left: 60px;
+background: linear-gradient(to left,
+violet,
+indigo,
+blue,
+green,
+yellow,
+orange,
+red);
+-webkit-background-clip: text;
+color: transparent;
+}
+</style>
 </head>
 <body id="m-body">
-    <div class="doom">
-        <p class="title">Rock Paper Scissors</p>
-
-        <button onclick="playGames(`Rock`);" class="move-b">
-            <img src="rock.jpg" alt="Rock" class="move-icon">
-        </button>
-        <button onclick="playGames(`Paper`);" class="move-b">
-            <img src="paper.jpg" alt="Paper" class="move-icon">
-        </button>
-        <button onclick="playGames(`Scissors`);" class="move-b">
-            <img src="scissors.jpg" alt="Scissors" class="move-icon">
-        </button>
-
-        <p class="js-result move-r"></p>
-        <p class="js-move ruuu"></p>
-        <p class="js-score score"></p>
-
-        <button onclick="
-            score.wins=0;
-            score.losses=0;
-            score.ties=0;
-            localStorage.removeItem('score');
-            alert('score is reset');
-            update();" class="reset">
-            reset
-        </button>
-    </div>
-
-    <script>
-        let score = JSON.parse(localStorage.getItem('score')) || {
-            wins: 0,
-            losses: 0,
-            ties: 0
-        };
-
-        update();
-
-        function playGames(dec) {
-            Move = pickComputerMove();
-            let result = "";
-            if (dec === `Scissors`) {
-                if (Move === 'Rock') {
-                    result = "you lose";
-                } else if (Move === "Paper") {
-                    result = "you win";
-                } else if (Move === "Scissors") {
-                    result = "it's a tie";
-                }
-            } else if (dec === `Paper`) {
-                if (Move === 'Rock') {
-                    result = "you win";
-                } else if (Move === "Paper") {
-                    result = "it's tie";
-                } else if (Move === "Scissors") {
-                    result = "you lose";
-                }
-            } else if (dec === `Rock`) {
-                if (Move === 'Rock') {
-                    result = "It's tie";
-                } else if (Move === "Paper") {
-                    result = "you lose";
-                } else if (Move === "Scissors") {
-                    result = "you win";
-                }
-            }
-            if (result === "you win") {
-                score.wins += 1;
-            } else if (result === "you lose") {
-                score.losses += 1;
-            } else if (result === "it's a tie") {
-                score.ties += 1;
-            }
-
-            localStorage.setItem('score', JSON.stringify(score));
-
-            update();
-
-            document.querySelector('.js-result').innerHTML = result;
-
-            document.querySelector('.js-move').innerHTML = `you <img src="${dec}.jpg" class="move-c">   computer <img src="${Move}.jpg" class="move-c">`;
-
-
-        }
-
-        function update() {
-            document.querySelector('.js-score').innerHTML = `wins:${score.wins}      loses:${score.losses}      tie:${score.ties}`;
-        }
-
-        function pickComputerMove() {
-            let Move = "";
-            const Num = Math.random();
-            if (Num < 0.33 && Num >= 0) {
-                Move = "Rock";
-            } else if (Num < 0.66 && Num >= 0.33) {
-                Move = "Paper";
-            } else if (Num < 1 && Num >= 0.66) {
-                Move = "Scissors";
-            }
-            return Move;
-
-        }
-    </script>
+<div class="doom">
+<p class="title">Rock Paper Scissors </p>
+<button onclick="playGames(`Rock`);
+" class="move-b">
+<img src="rock.jpg" class="move-icon">
+</button>
+<button onclick="playGames(`Paper`);" class="move-b">
+<img src="paper.jpg" class="move-icon">
+</button>
+<button onclick="playGames(`Scissors`);" class="move-b">
+<img src="scissors.jpg" class="move-icon">
+</button>
+<p class = "js-result move-r"></p>
+<p class = "js-move ruuu"></p>
+<p class = "js-score score"></p>
+<button onclick="
+score.wins=0;
+score.losses=0;
+score.ties=0;
+localStorage.removeItem('score');
+alert('score is reset');
+update();" class="reset">
+reset
+</button>
+</div>
+<script>
+let score =
+JSON.parse(localStorage.getItem('score'))||
+{
+wins:0,
+losses:0,
+ties:0
+};
+update();
+function playGames(dec)
+{
+Move=pickComputerMove();
+let result="";
+if(dec===`Scissors`){
+if(Move==='Rock'){
+result="you lose";
+}
+else if(Move==="Paper"){
+result="you win";
+}
+else if(Move==="Scissors"){
+result="it's a tie";
+}
+}
+else if(dec===`Paper`){
+if(Move==='Rock'){
+result="you win";
+}
+else if(Move==="Paper"){
+result="it's tie";
+}
+else if(Move==="Scissors"){
+result="you lose";
+}
+}
+else if(dec===`Rock`){
+if(Move==='Rock'){
+result="It's tie";
+}
+else if(Move==="Paper"){
+result="you lose";
+}
+else if(Move==="Scissors"){
+result="you win";
+}
+}
+if(result === "you win")
+{
+score.wins += 1;
+}
+else if(result === "you lose")
+{
+score.losses += 1;
+}
+else if(result === "it,s a tie")
+{
+score.ties += 1;
+}
+localStorage.setItem('score',JSON.stringify(score));
+update();
+document.querySelector('.js-result').innerHTML = result;
+document.querySelector('.js-move')
+.innerHTML = `you <img src="${dec}.jpg" class="move-c"> computer <img src="${Move}.jpg" class="move-c">`;
+}
+function update()
+{
+document.querySelector('.js-score').innerHTML = `wins:${score.wins} loses:${score.losses} tie:${score.ties}`;
+}
+function pickComputerMove()
+{
+let Move="";
+const Num=Math.random();
+if(Num < 0.33&&Num >= 0){
+Move="Rock";
+}
+else if(Num < 0.66&&Num >= 0.33){
+Move="Paper";
+}
+else if(Num < 1&&Num>=0.66){
+Move="Scissors";
+}
+return Move;
+}
+</script>
 </body>
 </html>
