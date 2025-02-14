@@ -6,51 +6,46 @@
     <title>games</title>
 <style>
 #m-body{
-background-image:url('s.jpg');
-background-size: cover; /* Ensures background covers the entire area */
-background-repeat: no-repeat; /* Prevents background from repeating */
-color: rgb(25, 25, 25);
-font-family: arial;
-display: flex; /* Enables flexbox for centering */
-justify-content: center; /* Centers horizontally */
-align-items: center; /* Centers vertically */
-min-height: 100vh; /* Makes sure the body takes up full viewport height */
-margin: 0; /* Removes default body margins */
+    background-image:url('s.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(25, 25, 25);
+    font-family: arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 .doom{
-border: none;
-max-width: 600px; /* Sets a maximum width for larger screens */
-width: 90%; /* Occupies most of the screen on smaller devices */
-margin: 20px; /* Consistent margin on all sides */
-border-radius: 25px;
-background-color:white;
-box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-padding: 20px; /* Consistent padding */
-box-sizing: border-box; /* Includes padding and border in element's total width and height */
+    border: none;
+    max-width: 600px;
+    width: 90%;
+    margin: 20px;
+    border-radius: 25px;
+    background-color:white;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .title{
-font-size: 2.2em; /* Use relative units for font sizes */
-font-weight: bold;
-text-align: center; /* Center the title */
-margin-bottom: 20px;
-background: linear-gradient(to left,
-violet,
-indigo,
-blue,
-green,
-yellow,
-orange,
-red);
--webkit-background-clip: text;
-color: transparent;
+    font-size: 2.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
 }
+
 .move-icon {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Key: Preserve aspect ratio and contain */
+    object-fit: contain;
 }
+
 .move-b{
     background-color: transparent;
     border: 3px solid rgb(25, 25, 25);
@@ -63,13 +58,13 @@ color: transparent;
     justify-content: center;
     align-items: center;
     padding: 0;
-    flex: 0 0 auto;
+    flex: 0 0 auto; /* Key: Don't allow shrinking */
     box-sizing: border-box;
     overflow: hidden; /* Key: Hide overflowing image content */
 }
 
 .move-b:hover{
-transform: scale(1.1); /* Add a subtle hover effect */
+    transform: scale(1.1);
 }
 
 .move-container {
@@ -78,73 +73,54 @@ transform: scale(1.1); /* Add a subtle hover effect */
     justify-content: center;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping if necessary */
 }
+
 .move-r{
-font-size: 1.2em; /* Use relative units */
-font-weight: bold;
-text-align: center; /* Center the result text */
-margin-bottom: 10px;
-background: linear-gradient(to left,
-violet,
-indigo,
-blue,
-green,
-yellow,
-orange,
-red);
--webkit-background-clip: text;
-color: transparent;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .score{
-font-weight: bold;
-text-align: center; /* Center the score */
-margin-bottom: 20px;
-background: linear-gradient(to left,
-violet,
-indigo,
-blue,
-green,
-yellow,
-orange,
-red);
--webkit-background-clip: text;
-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .reset{
-background-color: green;
-color: white;
-font-weight: bold;
-cursor: pointer;
-font-size: 1em; /* Use relative units */
-border: none;
-padding: 8px 15px;
-border-radius: 5px;
-display: block; /* Makes the button a block element */
-margin: 0 auto; /* Centers the button horizontally */
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
 }
 
 .move-c{
-height:50px; /* Adjusted image size */
-width: 50px;
+    height:50px;
+    width: 50px;
+    object-fit: contain; /* Added object-fit for consistency */
 }
 
 .ruuu{
-font-weight: bold;
-text-align: center; /* Center the move text */
-margin-bottom: 20px;
-background: linear-gradient(to left,
-violet,
-indigo,
-blue,
-green,
-yellow,
-orange,
-red);
--webkit-background-clip: text;
-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 </style></head>
 <body id="m-body">
